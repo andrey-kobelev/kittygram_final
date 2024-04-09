@@ -14,8 +14,10 @@ services:
   backend:
     image: andreykobe/kittygram_backend
     env_file: .env
+    depends_on:
+      - db
     volumes:
-      - media:/backend_media
+      - media:/app/media
       - static:/backend_static
   frontend:
     image: andreykobe/kittygram_frontend
@@ -26,6 +28,9 @@ services:
   gateway:
     image: andreykobe/kittygram_gateway
     env_file: .env
+    depends_on:
+      - db
+      - backend
     ports:
       - 9000:80
     volumes:

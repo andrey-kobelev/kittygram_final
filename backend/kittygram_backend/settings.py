@@ -8,11 +8,17 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'error-secret-key')
 
 DEBUG = True
 
+
+ENVS = (
+    'DOMAIN',
+    'LOCALHOST',
+    'LOCALHOST_IP',
+    'SERVER_IP'
+)
+
 ALLOWED_HOSTS = [
-    '51.250.97.96',
-    '127.0.0.1',
-    'localhost',
-    'kitty-kittygram.ru'
+    os.getenv(env_for_host, f'{env_for_host} ERROR')
+    for env_for_host in ENVS
 ]
 
 INSTALLED_APPS = [
@@ -61,8 +67,6 @@ WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        # Меняем настройку Django: теперь для работы будет использоваться
-        # бэкенд postgresql
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'django'),
         'USER': os.getenv('POSTGRES_USER', 'django'),
@@ -91,9 +95,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
