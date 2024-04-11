@@ -9,18 +9,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'error-secret-key')
 
 DEBUG = os.getenv('DEBUG_VALUE') == 'True'
 
-
-ENVS = (
-    'DOMAIN',
-    'LOCALHOST',
-    'LOCALHOST_IP',
-    'SERVER_IP'
-)
-
-ALLOWED_HOSTS = [
-    os.getenv(env_for_host, f'{env_for_host} ERROR')
-    for env_for_host in ENVS
-]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',

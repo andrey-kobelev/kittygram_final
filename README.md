@@ -1,5 +1,6 @@
 #  Проект «Kittygram»  
-  
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
+
 ## Описание проекта:  
   
 - #### Проект Kittygram позволяет пользователям поделиться своим пушистым другом
