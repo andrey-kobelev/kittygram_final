@@ -1,5 +1,6 @@
 #  Проект «Kittygram»  
-  
+![status](https://github.com/andrey-kobelev/kittygram_final/actions/workflows/main.yml/badge.svg)
+
 ## Описание проекта:  
   
 - #### Проект Kittygram позволяет пользователям поделиться своим пушистым другом
