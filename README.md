@@ -1,5 +1,5 @@
 #  Проект «Kittygram»  
-![example branch parameter](https://github.com/andrey-kobelev/docs/actions/workflows/main.yml/badge.svg?branch=main)
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
 
 ## Описание проекта:  
   
