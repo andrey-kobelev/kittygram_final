@@ -16,7 +16,7 @@
 - #### Рассказть всем о достижениях котика!  
 - #### Указать возраст котика.  
 ---  
-## Как запустить проект:  
+## Как запустить проект на сервере:  
 Настраиваем Docker
 
 ```bash
@@ -41,7 +41,7 @@ sudo docker compose -f docker-compose.production.yml down
 sudo docker compose -f docker-compose.production.yml up -d  
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate  
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic  
-sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collect_static/. /static_backend/static/   
+sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /static_backend/static/   
 ```  
   
 Устанавливаем и настраиваем NGINX  
@@ -95,8 +95,57 @@ sudo certbot --nginx
 # Перезапускаем NGINX  
 sudo systemctl reload nginx  
 ```  
+
+## Как запустить проект локально (только для проверки API):
+Клонировать репозиторий и перейти в него в командной строке:    
+    
+```  
+git clone https://github.com/andrey-kobelev/kittygram_final.git  
+```    
+    
+```  
+cd kittygram_final
+```    
+    
+Cоздать и активировать виртуальное окружение:    
+    
+```  
+python3 -m venv venv  
+```    
+    
+```  
+source venv/bin/activate  
+```    
+    
+Установить зависимости из файла requirements.txt:    
+    
+```  
+python3 -m pip install --upgrade pip  
+```    
+    
+```  
+pip install -r requirements
+```    
+    
+Выполнить миграции:    
+
+```  
+cd backend
+``` 
+    
+```  
+python3 manage.py migrate 
+```
+    
+Запустить проект:    
+    
+```  
+python3 manage.py runserver  
+```    
+
+После запуска будет доступен интерфейс для тестирования API по ссылке: http://127.0.0.1:8000/api/
+
   
----   
 ## В проекте были использованы технологии:  
 * #### Django REST  
 * #### Python 3.9  
