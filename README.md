@@ -96,9 +96,7 @@ sudo certbot --nginx
 sudo systemctl reload nginx  
 ```  
   
----  
-## Попробовать демо-версию:  
-* [Kittygram](https://kitty-kittygram.ru)  
+---   
 ## В проекте были использованы технологии:  
 * #### Django REST  
 * #### Python 3.9  
